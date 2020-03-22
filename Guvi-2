@@ -1,0 +1,57 @@
+#include <iostream>
+#include<stdio.h>
+using namespace std;
+class student
+{
+   public:
+   char name[20];
+   int regno;
+   float chemistry,physics,maths;
+   int sum;
+   void get()
+   {
+     cout<<"Enter name:"<<"\n";
+     cin>>name;
+     cout<<"Enter registration number:"<<"\n";
+     cin>>regno;
+     cout<<"Enter chemistry mark:"<<"\n";
+     cin>>chemistry;
+     cout<<"Enter maths mark:"<<"\n";
+     cin>>maths;
+     cout<<"Enter physics mark:"<<"\n";
+     cin>>physics;
+   }
+   void check()
+   {
+      if((chemistry>0&&physics>0&&maths>0)&&(chemistry<=100&&physics<=100&&maths<=100))
+      {
+           sum=chemistry+maths+physics;
+      }
+    }
+ };
+
+int main()
+{
+    int n,i,a,total=0;
+    student obj[100];
+    cout<<"Enter number of Students\n";
+    cin>>n;
+    for(i=0;i<n;i++)
+    {
+        obj[a].get();
+        obj[a].check();
+    }
+    for(i=0;i<n;i++)
+    {
+      if(obj[a].chemistry<0||obj[a].chemistry>100||obj[a].physics<0||obj[a].physics>100||obj[a].maths<0||obj[a].maths>100)
+      {
+         cout<<"Marks of "<<obj[a].name<<" is not in range\n";
+      }
+      total=obj[0].sum;
+      if(total<obj[a].sum)
+      {
+         total=obj[a].sum;
+      }
+    }
+    cout<<obj[a].name<<" has scored more marks "<<total;
+}
