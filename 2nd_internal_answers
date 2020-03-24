@@ -220,3 +220,96 @@ float result;
 result = Division (numerator, denominator);
 cout << "The quotient of 12.5/0 is"<< result << endl;
 } 
+                                                  PART - C
+                                                 
+ 11)  
+#include<iostream>
+using namespace std;
+class football
+{
+    char name[30];
+    float height,weight;
+    public:
+    void get()
+    {
+        cout<<"Enter name:"<<"\n";
+        cin>>name;
+        cout<<"Enter height in metres:"<<"\n";
+        cin>>height;
+        cout<<"Enter weight in kilogram:"<<"\n";
+        cin>>weight;
+    }
+    void print()
+    {
+        cout<<"Name:"<<name<<"\n";
+        cout<<"Height:"<<height<<"\n";
+        cout<<"Weight:"<<weight<<"\n";
+    }
+};
+class cricket:public football
+{
+    public:
+    void get()
+    {
+        football::get();
+    }
+    void print()
+    {
+        football::print();
+    }
+};
+class volleyball:public cricket
+{
+    public:
+    void get()
+    {
+        cricket::get();
+    }
+    void print()
+    {
+        cricket::print();
+    }
+};
+int main()
+{
+    int game,n,i;
+    cout<<"Enter the number if football-1/cricket-2/volleyball-3\n";
+    cin>>game;
+    switch(game)
+    {
+        case 1:
+        football f[100];
+        cout<<"Enter the number of players"<<"\n";
+        cin>>n;
+        cout<<"Enter details of "<<n<<" players\n";
+        for(i=0;i<n;i++)
+        {
+            f[i].get();
+            f[i].print();
+        }
+        break;
+        case 2:
+        cricket c[100];
+        cout<<"Enter the number of players"<<"\n";
+        cin>>n;
+        cout<<"Enter details of "<<n<<" players\n";
+        for(i=0;i<n;i++)
+        {
+            c[i].get();
+            c[i].print();
+        }
+        break;
+        case 3:
+        volleyball v[100];
+        cout<<"Enter the number of players"<<"\n";
+        cin>>n;
+        cout<<"Enter details of "<<n<<" players\n";
+        for(i=0;i<n;i++)
+        {
+            v[i].get();
+            v[i].print();
+        }
+        break;
+        default: cout<<"Enter correct number\n";
+    }
+}
